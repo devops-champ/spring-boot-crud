@@ -1,7 +1,11 @@
 -- Drop user first if they exist
-DROP USER if exists 'springstudent'@'%' ;
+DROP USER IF EXISTS 'springstudent'@'%';
 
--- Now create user with prop privileges
+-- Create the user
 CREATE USER 'springstudent'@'%' IDENTIFIED BY 'springstudent';
 
-GRANT ALL PRIVILEGES ON * . * TO 'springstudent'@'%';
+-- Create the database
+CREATE DATABASE IF NOT EXISTS `employee_directory`;
+
+-- Grant privileges on the specific database
+GRANT ALL PRIVILEGES ON employee_directory.* TO 'springstudent'@'%';
