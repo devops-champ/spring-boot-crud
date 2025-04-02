@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Start Dependencies') {
             steps {
-                sh 'docker-compose -f docker-compose.local.yml up -d'
+                sh 'docker compose -f docker-compose.local.yml up -d'
                 sh 'sleep 10'
             }
         }
@@ -25,7 +25,7 @@ pipeline {
 
         stage('Stop Dependencies') {
             steps {
-                sh 'docker-compose -f docker-compose.local.yml down'
+                sh 'docker compose -f docker-compose.local.yml down'
             }
         }
     }
