@@ -12,7 +12,7 @@ pipeline {
         stage('Run Tests') {
             agent {
                 docker {
-                    image 'maven:3.9-eclipse-temurin-17'
+                    image '3.9.9-eclipse-temurin-21-alpine'
                     // args '--entrypoint="" -v $HOME/.m2:/root/.m2'
                     reuseNode true
                 }
