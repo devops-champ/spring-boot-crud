@@ -18,7 +18,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean test Dspring.profiles.active=local'
+                sh 'mvn clean test -Dspring.profiles.active=local'
 
                 
             }
