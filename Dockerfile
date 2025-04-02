@@ -6,8 +6,8 @@ COPY pom.xml .
 
 COPY /src ./src
 
-RUN mvn clean package
+RUN mvn clean package -DskipTests
     
 EXPOSE 9060
 
-CMD ["java", "-jar", "target/employee-crud-demo-1.0.0.jar"]
+CMD ["java", "-jar", "target/employee-crud-demo-1.0.0.jar", "--spring.profiles.active=${SPRING_PROFILES_ACTIVE}"]
